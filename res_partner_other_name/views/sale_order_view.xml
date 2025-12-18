@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_sale_order_form_inherit_other_name" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.other.name</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_invoice_id']" position="before">
+                <field name="sale_second_name" string="Second Name"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_sale_order_search_second_name" model="ir.ui.view">
+        <field name="name">sale.order.search.second.name</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_quotation']" position="before">
+                <field name="sale_second_name"/>
+            </xpath>
+        </field>
+    </record>
+
+     <record id="view_sale_subscription_search_second_name" model="ir.ui.view">
+        <field name="name">sale.subscription.search.second.name</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='quotations']" position="before">
+                <field name="sale_second_name"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

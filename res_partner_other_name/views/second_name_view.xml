@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_second_name_list" model="ir.ui.view">
+        <field name="name">second.name.list</field>
+        <field name="model">second.name</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="partner_id"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="view_second_name_form" model="ir.ui.view">
+        <field name="name">second.name.form</field>
+        <field name="model">second.name</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_second_name" model="ir.actions.act_window">
+        <field name="name">Second Name</field>
+        <field name="res_model">second.name</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_second_name" name="Second Name"
+        parent="account.menu_finance_receivables"
+        action="action_second_name"
+        sequence="50"/>
+</odoo>

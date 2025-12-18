@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_partner_form_inherit_other_name" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.other.name</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="before">
+                <field name="second_name"/>
+            </xpath>
+        </field>
+    </record>
+
+
+   
+    <record id="view_partner_search_second_name" model="ir.ui.view">
+        <field name="name">res.partner.search.second.name</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='group_company']" position="before">
+                <field name="second_name"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
