@@ -118,7 +118,11 @@ Transform your HR operations today with the Employee Portal & Self-Service Modul
     'installable': True,
     'auto_install': False,
     'application': False,
-    'images': ['static/description/portal_menu.png', 'static/description/icon.png', 'static/description/employee_portal_access.png'],
+    'images': [
+        'static/description/portal_menu.png',
+        'static/description/icon.png',
+        'static/description/employee_portal_access.png',
+    ],
     'license': 'LGPL-3',
     'price': 39.0,
     'currency': 'USD',
